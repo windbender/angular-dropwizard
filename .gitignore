@@ -1,3 +1,9 @@
+.DS_Store
+.classpath
+.project
+.settings
+target
+.metadata
 *.class
 
 # Package Files #

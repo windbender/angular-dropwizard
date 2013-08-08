@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html ng-app="dropangular" class="well auth-demo-application waiting-for-angular">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="/css/bootstrap.css" />
+<link rel="stylesheet" href="/css/toastr.css" />
+<style>
+body {
+	padding-top: 60px;
+}
+</style>
+<title>angular dropwizard</title>
+</head>
+<body>
+<!-- 	<div id="initializing-panel" >Please Wait...</div> -->
+	<div id="content-outer">
+		<div id="login-holder">
+			<div id="loginbox">
+				<div id="login-inner" ng:controller="LoginController">
+					<form ng-submit="submit()">
+						<table border="0" cellpadding="0" cellspacing="0">
+							<tr ng-show="failMsg.length">
+								<th>&nbsp;</th>
+								<td>{{failMsg}}</td>
+							</tr>
+							<tr>
+								<th>Username</th>
+								<td><input type="text" class="login-inp"
+									ng-model="username" /></td>
+							</tr>
+							<tr>
+								<th>Password</th>
+								<td><input type="password" class="login-inp"
+									ng-model="password" /></td>
+							</tr>
+							<tr>
+								<th></th>
+								<td>
+									<button name="submit" type="submit" class="btn btn-success">Login</button>
+							</tr>
+						</table>
+					</form>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div id="content">
+
+			<div class="navbar navbar-inverse navbar-fixed-top">
+				<div class="navbar-inner">
+					<div class="container">
+						<button type="button" class="btn btn-navbar"
+							data-toggle="collapse" data-target=".nav-collapse">
+							<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
+						</button>
+						<a class="brand" href="#">Angular Dropwizard</a>
+
+						<div ng-controller="MenuController" class="nav-collapse collapse">
+							<ul class="nav" role="navigation">
+								<li ng-repeat="menu in menus" >
+									<a href="{{menu.route}}">{{menu.title}}</a>
+								</li>
+<!--  								<li><a href="#/books">Books</a></li> -->
+							</ul>
+						</div>
+						<div class="navbar-text pull-right" id="logout" ng:controller="LogoutController">
+							<span ng-show="isLoggedIn()">Hello {{curUser.getCurUser().username}} &nbsp; &nbsp; <a href="" ng-click="logout()" >logout</a> </span>
+	     					<span ng-hide="isLoggedIn()"><a href="" ng-click="gotoLogin()" >login</a>&nbsp; &nbsp;<a href="/signup.htm" >signup</a></span>
+	  					</div>
+						<!--/.nav-collapse -->
+					</div>
+					<!--/ container -->
+				</div>
+			</div>
+			<!--/ navbar -->
+
+			<div class="container" ng-view></div>
+		</div>
+	</div>
+
+	<script src="/js/jquery-1.9.1.js"></script>
+	<script src="/js/bootstrap.js"></script>
+	<script src="/js/angular.js"></script>
+	<script src="/js/angular-resource.js"></script>
+	<script src="/js/toastr.js"></script>
+	<script type="text/javascript" src="/js/angular-http-auth.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular-cookies.min.js"></script>
+
+	<script src="/js/app.js"></script>
+	
+</body>
+</html>
