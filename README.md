@@ -29,4 +29,5 @@ TODO
 1. add some healthchecks?
 2. update to bootstrap 3
 3. if needed update to latest angular and angular sub projects
+4. add gravatar to "logged in" upper right:  https://en.gravatar.com/site/implement/images/
 
