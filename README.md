@@ -19,6 +19,7 @@ Get Started
 
 Notes
 -------
+* In case it's not obvious, this should be served via HTTPS  in production since the logins are done via POST of JSON data.
 * Use of ConfiguredAssetsBundle so that the javascript,css, and html can be changed and reloaded without rebuilding the java server.
 * If you use eclipse of some other system which can replace running classes, then you can often change java code without a restart.
 * dropwizard-auth is used to do auth, but with some mods.
